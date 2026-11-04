@@ -1,0 +1,19 @@
+name = "quotation-pdf"
+main = "src/index.js"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+preview_urls = false
+
+# Headless Chrome used to turn the HTML letterhead into a PDF.
+[browser]
+binding = "BROWSER"
+
+# Non-secret settings. Replace every value in angle brackets.
+# Secrets (SHARED_SECRET, LARK_APP_SECRET) are NOT stored here: see README, step B4.
+[vars]
+LARK_API = "https://open.larksuite.com"      # Feishu (China) users: https://open.feishu.cn
+LARK_APP_ID = "<your Lark app id, starts with cli_>"
+LARK_BASE_TOKEN = "<the token in your Base URL: .../base/THIS-PART>"
+QUOTES_TABLE = "<table id of Quotes, starts with tbl>"
+PRODUCTS_TABLE = "<table id of Products, starts with tbl>"

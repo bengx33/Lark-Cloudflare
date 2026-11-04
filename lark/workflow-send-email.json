@@ -1,0 +1,38 @@
+{
+  "client_token": "1762222800",
+  "title": "Quote approved -> email client, mark Sent",
+  "steps": [
+    {
+      "id": "trigger_1",
+      "type": "ChangeRecordTrigger",
+      "title": "Status becomes Approved to send",
+      "next": "action_1",
+      "data": {
+        "table_name": "Quotes",
+        "trigger_control_list": [],
+        "condition_list": [
+          {
+            "conjunction": "and",
+            "conditions": [
+              { "field_name": "Status", "operator": "is", "value": [{ "value_type": "option", "value": { "name": "Approved to send" } }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "action_1",
+      "type": "SetRecordAction",
+      "title": "Mark as Sent",
+      "next": null,
+      "data": {
+        "table_name": "Quotes",
+        "max_set_record_num": 1,
+        "field_values": [
+          { "field_name": "Status", "value": [{ "value_type": "option", "value": { "name": "Sent" } }] }
+        ],
+        "ref_info": { "step_id": "trigger_1" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{"create_records":[
+  {"Description":"Sample item one, 100pcs/box","Item code":"A001","UOM":"BOX","Selling price":103.8},
+  {"Description":"Sample item two, 100pcs/box","Item code":"A002","UOM":"BOX","Selling price":3.8},
+  {"Description":"Sample item three, 10pcs/bag","Item code":"A003","UOM":"BAG","Selling price":20},
+  {"Description":"Sample item four, 300pcs/box","Item code":"A004","UOM":"PC","Selling price":0.4}
+]}

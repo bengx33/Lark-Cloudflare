@@ -1,0 +1,6 @@
+[
+  { "name": "Description", "type": "text" },
+  { "name": "Item code", "type": "text" },
+  { "name": "UOM", "type": "text" },
+  { "name": "Selling price", "type": "number", "style": { "type": "plain", "precision": 2 } }
+]

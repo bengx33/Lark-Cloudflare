@@ -1,0 +1,40 @@
+[
+  { "name": "Client company", "type": "text" },
+  { "name": "Quote No", "type": "auto_number",
+    "style": { "rules": [
+      { "type": "text", "text": "QT-" },
+      { "type": "created_time", "date_format": "yyMM" },
+      { "type": "text", "text": "-" },
+      { "type": "incremental_number", "length": 4 }
+    ] } },
+  { "name": "Contact (ATTN)", "type": "text" },
+  { "name": "Address", "type": "text" },
+  { "name": "Phone", "type": "text", "style": { "type": "phone" } },
+  { "name": "Email", "type": "text", "style": { "type": "email" } },
+  { "name": "Item 1", "type": "link", "link_table": "Products" },
+  { "name": "Qty 1", "type": "number", "style": { "type": "plain", "precision": 0 } },
+  { "name": "Item 2", "type": "link", "link_table": "Products" },
+  { "name": "Qty 2", "type": "number", "style": { "type": "plain", "precision": 0 } },
+  { "name": "Item 3", "type": "link", "link_table": "Products" },
+  { "name": "Qty 3", "type": "number", "style": { "type": "plain", "precision": 0 } },
+  { "name": "Item 4", "type": "link", "link_table": "Products" },
+  { "name": "Qty 4", "type": "number", "style": { "type": "plain", "precision": 0 } },
+  { "name": "Remarks", "type": "text" },
+  { "name": "Prepared by", "type": "text" },
+  { "name": "Designation", "type": "text" },
+  { "name": "Status", "type": "select", "multiple": false,
+    "options": [
+      { "name": "Draft", "hue": "Gray" },
+      { "name": "Ready for PDF", "hue": "Blue" },
+      { "name": "Generating", "hue": "Yellow" },
+      { "name": "PDF ready", "hue": "Green" },
+      { "name": "PDF error", "hue": "Red" },
+      { "name": "Approved to send", "hue": "Purple" },
+      { "name": "Sent", "hue": "Turquoise" },
+      { "name": "Send error", "hue": "Red" }
+    ] },
+  { "name": "PDF", "type": "attachment" },
+  { "name": "Lines snapshot", "type": "text" },
+  { "name": "Error message", "type": "text" },
+  { "name": "Created", "type": "created_at", "style": { "format": "yyyy-MM-dd HH:mm" } }
+]

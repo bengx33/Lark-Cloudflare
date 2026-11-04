@@ -1,0 +1,20 @@
+{
+  "quoteNo": "TEST-0001",
+  "date": "01/01/2026",
+  "validity": "30 DAYS",
+  "client": {
+    "company": "SAMPLE CLIENT SDN BHD",
+    "attn": "Sample Contact",
+    "address": "1 Sample Street, 50000 Sample City",
+    "phone": "012-0000000",
+    "email": "client@example.com"
+  },
+  "items": [
+    { "code": "A001", "desc": "Sample item one, 100pcs/box", "qty": 5, "uom": "BOX", "price": 103.8 },
+    { "code": "A002", "desc": "Sample item two, 100pcs/box", "qty": 10, "uom": "BOX", "price": 3.8 },
+    { "code": "A003", "desc": "Sample item three, 10pcs/bag", "qty": 2, "uom": "BAG", "price": 20 }
+  ],
+  "remarks": "PAYMENT TERM : 30 DAYS",
+  "preparedBy": "Staff Name",
+  "designation": "Staff Title"
+}

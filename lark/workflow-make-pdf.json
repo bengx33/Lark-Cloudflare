@@ -1,0 +1,45 @@
+{
+  "client_token": "1762219200",
+  "title": "Quote ready -> make PDF (Cloudflare Worker)",
+  "steps": [
+    {
+      "id": "trigger_1",
+      "type": "ChangeRecordTrigger",
+      "title": "Status becomes Ready for PDF",
+      "next": "action_1",
+      "data": {
+        "table_name": "Quotes",
+        "trigger_control_list": [],
+        "condition_list": [
+          {
+            "conjunction": "and",
+            "conditions": [
+              { "field_name": "Status", "operator": "is", "value": [{ "value_type": "option", "value": { "name": "Ready for PDF" } }] }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "action_1",
+      "type": "HTTPClientAction",
+      "title": "Call the PDF Worker",
+      "next": null,
+      "data": {
+        "method": "POST",
+        "url": [{ "value_type": "text", "value": "https://quotation-pdf.YOUR-SUBDOMAIN.workers.dev/lark" }],
+        "headers": [
+          { "key": "Content-Type", "value": [{ "value_type": "text", "value": "application/json" }] },
+          { "key": "x-api-key", "value": [{ "value_type": "text", "value": "PASTE-YOUR-SHARED-SECRET-HERE" }] }
+        ],
+        "body_type": "raw",
+        "raw_body": [
+          { "value_type": "text", "value": "{\"record_id\":\"" },
+          { "value_type": "ref", "value": "$.trigger_1.recordId" },
+          { "value_type": "text", "value": "\"}" }
+        ],
+        "response_type": "none"
+      }
+    }
+  ]
+}
